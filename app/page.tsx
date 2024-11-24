@@ -1,101 +1,67 @@
+import About from "@/component/sections/AboutSection";
+import Gallery from "@/component/sections/GallerySection";
+import { AutoScrollGallery } from "@/component/sections/HeroSection";
+import LocationSection from "@/component/sections/LocationSection";
+import Service from "@/component/sections/ServiceSection";
+import Testimonial from "@/component/sections/TestmonialSection";
+import Section from "@/component/ui/SectionWrapper";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <>
+      <Head>
+        <title>Best Mehandi Artists in Tamil Nadu - Chennai, Coimbatore & Beyond</title>
+        <meta
+          name="description"
+          content="Book the best Mehandi artists across Tamil Nadu, including Chennai and Coimbatore, for weddings, baby showers, and more. Professional designs using 100% organic Mehandi with no side effects."
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        <meta name="keywords" content="Mehandi artists Tamil Nadu, Mehandi artists Chennai, Mehandi artists Coimbatore, organic Mehandi designs, professional Mehandi artist, Tamil Nadu bridal Mehandi, baby shower Mehandi" />
+        <meta name="author" content="Bridal Mehandi Art" />
+        <meta property="og:title" content="Best Mehandi Artists in Tamil Nadu - Chennai, Coimbatore +15 more cities" />
+        <meta
+          property="og:description"
+          content="Discover exquisite Mehandi services in Tamil Nadu, from weddings to baby showers. Expert Mehandi artists in Chennai, Coimbatore, and beyond. 100% organic designs."
+        />
+        <meta property="og:image" content="/assets/bridal.jpg" />
+        {/* <meta property="og:url" content="https://yourwebsite.com" /> */}
+        <meta property="og:type" content="website" />
+      </Head>
+      <AutoScrollGallery />
+      <About />
+      <Service />
+      <Gallery />
+      <Section title="People love our work">
+        <div className="flex flex-wrap justify-center gap-5">
+          <Testimonial
+            name="Meenakshi R."
+            feedback="The mehandi designs were intricate and beautifully detailed. The artist was professional and ensured the patterns were unique to my preferences. Highly recommend this service!"
+            image="https://via.placeholder.com/150"
+            rating={5}
+          />
+          <Testimonial
+            name="Janani S."
+            feedback="I loved the creativity and precision in the mehandi designs. The artist took the time to understand what I wanted and delivered beyond my expectations!"
+            image="https://via.placeholder.com/150"
+            rating={5}
+          />
+          <Testimonial
+            name="Lakshmi P."
+            feedback="The mehandi artistry was outstanding! The patterns were traditional yet modern, and the attention to detail was remarkable. I'll definitely come back for future events."
+            image="https://via.placeholder.com/150"
+            rating={5}
+          />
+          <Testimonial
+            name="Sowmya V."
+            feedback="The designs were stunning, and the quality of work was amazing! The artist was patient and very skilled. It was a wonderful experience overall."
+            image="https://via.placeholder.com/150"
+            rating={5}
+          />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </Section>
+      <LocationSection />
+    </>
+  )
 }

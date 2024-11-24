@@ -4,21 +4,28 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-sitemap && next export",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@sendgrid/mail": "^8.1.4",
+    "@svgr/webpack": "^8.1.0",
+    "@types/nodemailer": "^6.4.17",
+    "emailjs-com": "^3.2.0",
+    "lucide-react": "^0.460.0",
+    "next": "15.0.3",
+    "next-sitemap": "^4.2.3",
+    "nodemailer": "^6.9.16",
     "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
-    "next": "15.0.3"
+    "react-dom": "19.0.0-rc-66855b96-20241106"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
