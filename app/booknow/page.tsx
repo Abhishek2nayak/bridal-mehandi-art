@@ -1,5 +1,6 @@
 "use client";
 
+import { mobile_number } from "@/component/sections/HeroSection";
 import { useState } from "react";
 
 interface FormData {
@@ -19,12 +20,10 @@ export default function BookNow() {
         notes: "",
     });
 
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement>
-    ) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { id, value, type, checked } = e.target;
 
-        // Handle mehandi Types (multi-select)
+        // Handle mehndi Types (multi-select)
         if (type === "checkbox" && id.startsWith("mehndiType")) {
             const selectedType = value;
             setFormData((prev) => {
@@ -40,10 +39,10 @@ export default function BookNow() {
     };
 
     const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        const { id, value } = e.target; // Extract the `id` and `value` from the textarea element
+        const { id, value } = e.target;
         setFormData((prev) => ({
             ...prev,
-            [id]: value, // Update the corresponding field in formData
+            [id]: value,
         }));
     };
 
@@ -51,47 +50,44 @@ export default function BookNow() {
         e.preventDefault();
         const { name, date, phone, mehndiTypes, notes } = formData;
         const message = encodeURIComponent(
-            `Hello, I would like to book a mehandi design:\n\n` +
+            `Hello, I would like to book a mehndi design:\n\n` +
             `Name: ${name}\n` +
             `Event Date: ${date}\n` +
             `Phone: ${phone}\n` +
-            `mehandi Types: ${mehndiTypes.join(", ")}\n` +
+            `Mehndi Types: ${mehndiTypes.join(", ")}\n` +
             `Additional Notes: ${notes}\n\n` +
             `Please confirm my booking.`
-
         );
 
         const ownerWhatsAppNumber = "7417245847";
 
         // Redirect to WhatsApp
         window.open(`https://wa.me/${ownerWhatsAppNumber}?text=${message}`, "_blank");
-
-
     };
 
     return (
-        <>
-            <h2 className="text-3xl pb-5 font-bold text-center text-darkBrown mb-4">
-                Book a mehandi Design
+        <div className="px-4 sm:px-8 lg:px-16 py-10">
+            <h2 className="text-3xl font-bold text-center text-darkBrown mb-6">
+                Book a Mehndi Design
             </h2>
-            <div className="flex justify-center gap-10 mb-5">
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
                 <a
-                    href="tel:+7417245847"
-                    className="w-[200px] bg-mediumBrown text-white py-2 px-4 rounded-lg text-center shadow hover:bg-darkBrown transition duration-300"
+                    href={`tel:${mobile_number}`}
+                    className="w-full sm:w-auto bg-mediumBrown text-white py-2 px-4 rounded-lg text-center shadow hover:bg-darkBrown transition duration-300"
                 >
                     Call Us
                 </a>
                 <a
                     href="https://wa.me/7417245847"
-                    className="w-[200px] bg-lightYellow text-dark py-2 px-4 rounded-lg text-center shadow hover:bg-darkYellow transition duration-300"
+                    className="w-full sm:w-auto bg-lightYellow text-dark py-2 px-4 rounded-lg text-center shadow hover:bg-darkYellow transition duration-300"
                     target="_blank"
                 >
                     WhatsApp
                 </a>
             </div>
-            <div className="flex justify-center mb-5">
-                <div style={{ width: "500px", maxWidth: "800px" }}>
-                    <form className="space-y-4" onSubmit={handleSubmit}>
+            <div className="flex justify-center">
+                <div className="w-full max-w-lg">
+                    <form className="space-y-6" onSubmit={handleSubmit}>
                         {/* Name Field */}
                         <div>
                             <label
@@ -148,14 +144,12 @@ export default function BookNow() {
                             />
                         </div>
 
-                        {/* mehandi Type Field (Multi-Select with Checkboxes) */}
+                        {/* Mehndi Type Field */}
                         <div>
-                            <label
-                                className="block text-sm font-medium text-darkBrown mb-2"
-                            >
-                                mehandi Types
+                            <label className="block text-sm font-medium text-darkBrown mb-2">
+                                Mehndi Types
                             </label>
-                            <div className="grid grid-cols-2 gap-2">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 {[
                                     "Arabic",
                                     "Bridal",
@@ -165,10 +159,7 @@ export default function BookNow() {
                                     "Party",
                                     "Leg",
                                 ].map((type) => (
-                                    <label
-                                        key={type}
-                                        className="inline-flex items-center"
-                                    >
+                                    <label key={type} className="flex items-center">
                                         <input
                                             type="checkbox"
                                             id={`mehndiType-${type}`}
@@ -196,7 +187,7 @@ export default function BookNow() {
                                 value={formData.notes}
                                 onChange={handleTextAreaChange}
                                 className="w-full border border-mediumBrown rounded-lg py-2 px-3 text-darkBrown bg-white focus:outline-none focus:ring focus:ring-lightYellow"
-                                rows={3}
+                                rows={4}
                                 placeholder="Mention any specific design or requirement"
                             ></textarea>
                         </div>
@@ -211,6 +202,6 @@ export default function BookNow() {
                     </form>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

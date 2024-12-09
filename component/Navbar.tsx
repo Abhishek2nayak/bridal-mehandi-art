@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import CurrentOfferTicker from "./CurrentOfferTicker";
 import { Phone, Menu, X } from "lucide-react";
+import { mobile_number } from "./sections/HeroSection";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -173,7 +174,7 @@ export default function Navbar() {
               {/* Call Button */}
               <li>
                 <a
-                  href="tel:+919510668439"
+                  href={`tel:${mobile_number}`}
                   className="
                     inline-flex
                     items-center

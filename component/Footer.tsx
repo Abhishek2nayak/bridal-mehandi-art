@@ -124,19 +124,7 @@ const Footer: React.FC = () => {
               Don’t miss to subscribe to our new feeds, kindly fill the form
               below.
             </p>
-            <form className="relative">
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full py-3 px-4 bg-dark text-gray-400 rounded-md outline-none"
-              />
-              <button
-                type="submit"
-                className="absolute right-0 top-0  mr-1.5  text-white p-3 rounded-md"
-              >
-                <Search />
-              </button>
-            </form>
+
           </div>
         </div>
       </div>
@@ -147,7 +135,7 @@ const Footer: React.FC = () => {
           <p>
             Copyright &copy; {new Date().getFullYear()}, All Rights Reserved.{" "}
             <Link
-              href="https://codepen.io/anupkumar92/"
+              href="/"
               className="text-yellow-100 hover:underline"
             >
               Bridal Mehandi Art

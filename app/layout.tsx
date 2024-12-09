@@ -19,6 +19,22 @@ const WhatsAppButton: React.FC = () => {
   );
 };
 
+// Instagram Button Component
+const InstagramButton: React.FC = () => {
+  return (
+    <a
+      href="https://www.instagram.com/milan_mehandi_nagercoil/profilecard/?igsh=aDNwNGI0eGR0MzRo" // Replace with your Instagram profile URL
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed  right-5 flex justify-center items-center bg-[#E4405F] text-white text-4xl p-4 rounded-full shadow-lg animate-instagram transition-all hover:bg-[#C13584] focus:outline-none"
+      style={{ boxShadow: "0 0 0 0 rgba(228, 64, 95, 0.5)", bottom : '100px' }}
+    >
+     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+    </a>
+  );
+};
+
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -146,6 +162,7 @@ export default function RootLayout({
 
         {/* Add the WhatsApp Button */}
         <WhatsAppButton />
+        <InstagramButton />
       </body>
     </html>
   );
